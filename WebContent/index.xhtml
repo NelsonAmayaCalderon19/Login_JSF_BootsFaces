@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:b="http://bootsfaces.net/ui"		
+    xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+<title>Primera Pagina JSF</title>
+<style type="text/css">
+            .form-signin{
+                margin: 0 auto;
+                max-width: 330px;
+                padding:15px ;
+            }
+        </style>
+</h:head>
+<h:body>
+<b:container>
+<b:form styleClass="form-signin" propendId="false">
+<h2 class="form-signin-header">Inicie Sesión</h2>
+<b:inputText id="email" placeholder="Dirección de Correo" value="#{loginBean.usuario.usuario}">
+<f:facet name="prepend">
+<b:icon name="user"/>
+</f:facet>
+</b:inputText>
+<b:inputText id="password" placeholder="Password" type="password" value="#{loginBean.usuario.clave}">
+<f:facet name="prepend">
+<b:iconAwesome name="key"/>
+</f:facet>
+</b:inputText>
+<b:selectBooleanCheckbox value="true" caption="recordarme"/>
+<b:commandButton look="primary btn-block" action="#{loginBean.login}" value="Sign In" icon="log-in" size="lg"/>
+</b:form>
+</b:container>
+
+</h:body>
+</html>
